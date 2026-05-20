@@ -41,6 +41,15 @@
   padding: 32px 24px;
 }
 
+/* ツールバー: 見出しと登録ボタンを横並び */
+.toolbar {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 24px;
+  gap: 12px;
+}
+
 .heading {
   font-size: 1.5rem;
   font-weight: 700;
@@ -51,7 +60,51 @@
 .count {
   color: #888;
   font-size: 0.875rem;
-  margin: 0 0 24px;
+  margin: 0;
+}
+
+.addButton {
+  padding: 10px 20px;
+  background: #4f46e5;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.2s;
+}
+
+.addButton:hover {
+  background: #4338ca;
+}
+
+.error {
+  color: #dc2626;
+  font-size: 0.875rem;
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+  border-radius: 8px;
+  padding: 10px 14px;
+  margin-bottom: 20px;
+}
+
+.loadingText {
+  color: #888;
+  text-align: center;
+  padding: 60px 0;
+}
+
+/* 物件が0件のときの案内エリア */
+.empty {
+  text-align: center;
+  padding: 80px 0;
+  color: #888;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
 }
 
 .grid {
@@ -67,6 +120,8 @@
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
   position: relative;
   transition: transform 0.2s, box-shadow 0.2s;
+  display: flex;
+  flex-direction: column;
 }
 
 .card:hover {
@@ -83,6 +138,7 @@
   padding: 3px 10px;
   border-radius: 20px;
   margin-bottom: 12px;
+  align-self: flex-start;
 }
 
 .cardTitle {
@@ -95,7 +151,7 @@
 .cardArea {
   font-size: 0.875rem;
   color: #555;
-  margin: 0 0 4px;
+  margin: 0 0 16px;
   display: flex;
   align-items: center;
   gap: 4px;
@@ -105,12 +161,6 @@
   font-size: 0.85rem;
 }
 
-.cardSize {
-  font-size: 0.8rem;
-  color: #888;
-  margin: 0 0 16px;
-}
-
 .cardRent {
   font-size: 1.4rem;
   font-weight: 700;
@@ -118,10 +168,54 @@
   margin: 0;
   border-top: 1px solid #f0f0f0;
   padding-top: 14px;
+  flex: 1;
 }
 
 .rentUnit {
   font-size: 0.8rem;
   font-weight: 400;
   color: #888;
+}
+
+/* 編集・削除ボタンエリア */
+.cardActions {
+  display: flex;
+  gap: 8px;
+  margin-top: 16px;
+  padding-top: 14px;
+  border-top: 1px solid #f0f0f0;
+}
+
+.editButton {
+  flex: 1;
+  padding: 8px 0;
+  background: #f3f4f6;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #374151;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.editButton:hover {
+  background: #e5e7eb;
+}
+
+.deleteButton {
+  flex: 1;
+  padding: 8px 0;
+  background: #fef2f2;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #dc2626;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.deleteButton:hover {
+  background: #fee2e2;
 }
