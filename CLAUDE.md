@@ -41,6 +41,13 @@
 
 ---
 
+## デプロイ情報
+
+- **本番URL**: https://realestate-app-dusky.vercel.app
+- **Supabaseプロジェクト名**: realestate-app
+
+---
+
 ## 作業完了時のチェックリスト
 
 1. コードの動作確認
